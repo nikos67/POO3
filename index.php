@@ -1,0 +1,27 @@
+<?php
+require_once 'src/Bicycle.php';
+require_once 'src/Car.php';
+require_once 'src/Truck.php';
+require_once 'src/MotorWay.php';
+require_once 'src/PedestrianWay.php';
+require_once 'src/ResidentialWay.php';
+$bicycle = new Bicycle('blue', 1);
+echo $bicycle->forward();
+var_dump($bicycle);
+echo '<br>';
+$car = new Car('green', 4, 'electric');
+echo $car->forward();
+var_dump($car);
+echo '<br>';
+var_dump(Car::ALLOWED_ENERGIES);
+echo '<br>';
+$truck = new Truck(100, 'red', 3, 'fuel');
+var_dump($truck);
+echo '<br>';
+echo $truck->getLoad();
+$Motor = new MotorWay();
+var_dump($Motor);
+echo '<br>';
+$Motor->addVehicule($truck);
+var_dump($Motor);
+echo '<br>';
